@@ -1,0 +1,33 @@
+{
+  "name": "personal-finance-app",
+  "version": "1.0.0",
+  "description": "finance-handling-app",
+  "license": "ISC",
+  "author": "David Henery",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "next": "^15.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.10",
+    "@types/node": "24.0.4",
+    "@types/react": "19.1.8",
+    "eslint": "9.29.0",
+    "eslint-config-next": "15.3.4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.10",
+    "typescript": "5.8.3"
+  }
+}
