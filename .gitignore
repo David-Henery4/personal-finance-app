@@ -48,4 +48,10 @@ yarn-error.log*
 pnpm-debug.log*
 
 
+# Local Sqlite Database
+*.db
+*.sqlite
+
+
+
 
