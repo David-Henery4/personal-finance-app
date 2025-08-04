@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+
+  /** Fonts **/
+  --font-public-sans: var(----font-public-sans);
   
   /** Colour Pallet **/
   
