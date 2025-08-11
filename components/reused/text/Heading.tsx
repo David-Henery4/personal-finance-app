@@ -15,14 +15,17 @@ const Heading = ({ headingType = "primary", className, ...props }: HeadingTypes)
   return <h1 className={cn(headingVariants({headingType}),  className)} {...props} />;
 }
 
-const headingVariants = cva("font-bold leading-[120%] tracking-[0px]", {
-  variants: {
-    headingType: {
-      primary: "text-[32px]",
-      secondary: "text-xl",
+const headingVariants = cva(
+  "text-grey-900 font-bold leading-[120%] tracking-[0px]",
+  {
+    variants: {
+      headingType: {
+        primary: "text-[32px]",
+        secondary: "text-xl",
+      },
     },
-  },
-});
+  }
+);
 
 
 export default Heading;

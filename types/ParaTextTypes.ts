@@ -1,7 +1,7 @@
 import type { HTMLAttributes } from "react";
 
 interface ParaTextTypes extends HTMLAttributes<HTMLParagraphElement> {
-  isBold: boolean;
+  bold: "Y" | "N";
   size: "base" | "sm" | "xs";
 }
 
