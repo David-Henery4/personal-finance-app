@@ -1,5 +1,6 @@
 import public_sans from "@/fonts/publicSans";
 import LogoLarge from "@/public/assets/images/logo-large.svg";
+import SigninLoginImg from "@/components/global/login-signup/SigninLoginImg";
 
 export default function RootLayout({
   children,
@@ -14,8 +15,10 @@ export default function RootLayout({
             <LogoLarge />
           </div>
 
-          <section className="grid place-items-center col-start-2 col-end-12">
-            {children}
+          <section className="col-start-2 col-end-12 flex justify-center items-center gap-10 py-5">
+            <SigninLoginImg />
+
+            <div className="w-full max-w-xl flex-3">{children}</div>
           </section>
         </main>
       </body>

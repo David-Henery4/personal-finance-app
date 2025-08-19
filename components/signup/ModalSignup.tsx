@@ -2,14 +2,12 @@ import Heading from "../reused/text/Heading";
 import ParaText from "../reused/text/ParaText";
 import Form from "./form/Form";
 
-
 const ModalSignup = () => {
   return (
-    <div className="w-full max-w-xl bg-white rounded-xl px-5 py-6">
-      
+    <div className="w-full bg-white rounded-xl px-5 py-6">
       <Heading headingType="primary">Sign Up</Heading>
 
-      <Form/>
+      <Form />
 
       <div className="mt-8 w-full flex justify-center items-center gap-2">
         <ParaText bold="N" size="sm" className="text-grey-500">
@@ -22,9 +20,8 @@ const ModalSignup = () => {
           Login
         </a>
       </div>
-
     </div>
   );
-}
+};
 
-export default ModalSignup
+export default ModalSignup;
