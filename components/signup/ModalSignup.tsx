@@ -4,7 +4,7 @@ import Form from "./form/Form";
 
 const ModalSignup = () => {
   return (
-    <div className="w-full bg-white rounded-xl px-5 py-6">
+    <div className="w-full max-w-[560px] mx-auto bg-white rounded-xl px-5 py-6">
       <Heading headingType="primary">Sign Up</Heading>
 
       <Form />

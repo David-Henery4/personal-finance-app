@@ -4,6 +4,7 @@
   /** Breakpoints **/
   --breakpoint-laptop: 64em; /* 1024px */
   --breakpoint-desktop-sm: 73.75em; /* 1180px */
+  --breakpoint-desktop-md: 76.5em; /* 1224px */
 
   /** Fonts **/
   --font-public-sans: var(--font-public-sans);
@@ -44,4 +45,5 @@
   /** Grid Styles **/
   --grid-template-rows-login: min-content 1fr;
   --grid-template-columns-login: 16px repeat(10, 1fr) 16px;
+  --grid-template-columns-login-desktop: 20px repeat(10, 1fr) 20px;
 }
