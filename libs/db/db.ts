@@ -1,13 +1,8 @@
-import { createClient } from "@libsql/client";
+import {drizzle} from "drizzle-orm/neon-http";
+import {neon} from "@neondatabase/serverless";
+import { config } from "dotenv";
 
-const client = createClient({
-  url: "file:./local-users-db.sqlite",
-});
+config({path: ".env"}); // Might need to change path
 
-const result = await client.execute(
-  "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, email TEXT, password TEXT)"
-);
-
-
-
-export default client;
+const sql = neon(process.env.DATABASE_URL!) // Might need a pre-fix (EG: PUBLIC_NEXT or something)
+export const db = drizzle({client: sql})
