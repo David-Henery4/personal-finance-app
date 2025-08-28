@@ -8,21 +8,25 @@ import {
   boolean,
 } from "drizzle-orm/pg-core";
 
-export const usersTable = pgTable("users", {
-  id: serial("id").primaryKey(),
-  email: text("email").notNull().unique(),
-  hashedPassword: text("hashed_password").notNull(),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
+// Reference Neon Auth's existing users table
+export const usersTable = pgTable("neon_auth.users_sync", {
+  id: text("id").primaryKey(),
+  name: text("name"),
+  email: text("email"),
+  createdAt: timestamp("created_at"),
+  updatedAt: timestamp("updated_at"),
+  deletedAt: timestamp("deleted_at"),
+  rawJson: text("raw_json"),
 });
 
 export const budgetsTable = pgTable("budgets", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id")
+  userId: text("user_id")
     .notNull()
     .references(() => usersTable.id, { onDelete: "cascade" }),
   name: text("name").notNull(),
-  category: text("category").notNull(), // validate via enum in code
-  amount: numeric("amount", { precision: 10, scale: 2 }).notNull(), // Max/Planned
+  category: text("category").notNull(),
+  amount: numeric("amount", { precision: 10, scale: 2 }).notNull(),
   minAmount: numeric("min_amount", { precision: 10, scale: 2 })
     .default("0")
     .notNull(),
@@ -32,7 +36,7 @@ export const budgetsTable = pgTable("budgets", {
 
 export const potsTable = pgTable("pots", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id")
+  userId: text("user_id")
     .notNull()
     .references(() => usersTable.id, { onDelete: "cascade" }),
   name: text("name").notNull(),
@@ -46,7 +50,7 @@ export const potsTable = pgTable("pots", {
 
 export const transactionsTable = pgTable("transactions", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id")
+  userId: text("user_id")
     .notNull()
     .references(() => usersTable.id, { onDelete: "cascade" }),
   budgetId: integer("budget_id").references(() => budgetsTable.id, {
@@ -56,43 +60,34 @@ export const transactionsTable = pgTable("transactions", {
   category: text("category").notNull(),
   note: text("note"),
   date: timestamp("date").defaultNow().notNull(),
-  // New: Recipient or Sender name
-  counterparty: text("counterparty").notNull(), // e.g., "Netflix", "John Doe"
-  // Transaction type: income or expense
-  type: text("type").notNull(), // values: 'income', 'expense'
+  counterparty: text("counterparty").notNull(),
+  type: text("type").notNull(),
 });
 
 export const billsTable = pgTable("bills", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id")
+  userId: text("user_id")
     .notNull()
     .references(() => usersTable.id, { onDelete: "cascade" }),
   name: text("name").notNull(),
   amount: numeric("amount", { precision: 10, scale: 2 }).notNull(),
   category: text("category").notNull(),
-  recurrence: text("recurrence").notNull(), // e.g., "monthly", "weekly", "Yearly"
-  // The base due date (first occurrence)
+  recurrence: text("recurrence").notNull(),
   startDate: timestamp("start_date").notNull(),
-  // Track the next due date dynamically
   nextDueDate: timestamp("next_due_date").notNull(),
-  // Optional: End date for recurrence (null means indefinite)
   endDate: timestamp("end_date"),
-  // Status for the current cycle
   isPaid: boolean("is_paid").default(false).notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+// Types
 export type InsertUser = typeof usersTable.$inferInsert;
 export type SelectUser = typeof usersTable.$inferSelect;
-//
 export type InsertBudgets = typeof budgetsTable.$inferInsert;
 export type SelectBudgets = typeof budgetsTable.$inferSelect;
-//
 export type InsertPots = typeof potsTable.$inferInsert;
 export type SelectPots = typeof potsTable.$inferSelect;
-//
 export type InsertTransactions = typeof transactionsTable.$inferInsert;
 export type SelectTransactions = typeof transactionsTable.$inferSelect;
-//
 export type InsertBills = typeof billsTable.$inferInsert;
 export type SelectBills = typeof billsTable.$inferSelect;

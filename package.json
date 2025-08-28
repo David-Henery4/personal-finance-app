@@ -13,6 +13,7 @@
   "dependencies": {
     "@libsql/client": "^0.15.9",
     "@neondatabase/serverless": "^1.0.1",
+    "@stackframe/stack": "^2.8.34",
     "@types/better-sqlite3": "^7.6.13",
     "@types/jsonwebtoken": "^9.0.10",
     "bcryptjs": "^3.0.2",
@@ -24,9 +25,10 @@
     "jsonwebtoken": "^9.0.2",
     "next": "15.4.4",
     "react": "19.1.1",
-    "react-dom": "19.1.1", 
+    "react-dom": "19.1.1",
     "react-hook-form": "^7.62.0",
     "tailwind-merge": "^3.3.1",
+    "ws": "^8.18.3",
     "zod": "^3.25.67"
   },
   "devDependencies": {
@@ -34,6 +36,7 @@
     "@tailwindcss/postcss": "^4.1.10",
     "@types/node": "24.0.4",
     "@types/react": "19.1.9",
+    "@types/ws": "^8.18.1",
     "drizzle-kit": "^0.31.4",
     "eslint": "9.29.0",
     "eslint-config-next": "15.4.4",

@@ -1,8 +1,10 @@
-import {drizzle} from "drizzle-orm/neon-http";
-import {neon} from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/neon-http";
+import { neon, neonConfig } from "@neondatabase/serverless";
 import { config } from "dotenv";
+import ws from "ws";
 
-config({path: ".env"}); // Might need to change path
+neonConfig.webSocketConstructor = ws;
+config({ path: ".env" }); // Might need to change path
 
-const sql = neon(process.env.DATABASE_URL!) // Might need a pre-fix (EG: PUBLIC_NEXT or something)
-export const db = drizzle({client: sql})
+const sql = neon(process.env.DATABASE_URL!); // Might need a pre-fix (EG: PUBLIC_NEXT or something)
+export const db = drizzle({ client: sql });
