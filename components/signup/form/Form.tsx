@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { startTransition } from "react";
 import { Input, SubmitBtn } from "@/components/reused/form-components";
 import { useStackApp } from "@stackframe/stack";
 import { useActionState } from "react";
@@ -15,7 +15,7 @@ interface FormState {
 }
 
 const Form = () => {
-  const app = useStackApp();
+  // const app = useStackApp();
   const [state, formAction] = useActionState<FormState | null, FormData>(
     signup,
     null
@@ -48,11 +48,15 @@ const Form = () => {
     formData.append("name", data.name);
     formData.append("email", data.email);
     formData.append("create-password", data["create-password"]);
-    formAction(formData);
+
+    startTransition(() => {
+      formAction(formData);
+    });
   };
 
   return (
     <form
+      // action={formAction}
       onSubmit={handleSubmit(onSubmit)}
       className="mt-8 flex flex-col gap-4"
     >
