@@ -1,6 +1,4 @@
 import React from "react";
-import { StackProvider, StackTheme } from "@stackframe/stack";
-import { stackServerApp } from "../stack";
 import "../styles/globals.css";
 import public_sans from "@/fonts/publicSans";
 
@@ -11,11 +9,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${public_sans.variable} antialiased`}>
-      <body className="font-public-sans bg-beige-100">
-        <StackProvider app={stackServerApp}>
-          <StackTheme>{children}</StackTheme>
-        </StackProvider>
-      </body>
+      <body className="font-public-sans bg-beige-100">{children}</body>
     </html>
   );
 }

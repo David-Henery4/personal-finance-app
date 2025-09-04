@@ -1,7 +1,6 @@
 "use client";
 import React, { startTransition } from "react";
 import { Input, SubmitBtn } from "@/components/reused/form-components";
-import { useStackApp } from "@stackframe/stack";
 import { useActionState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,7 +14,6 @@ interface FormState {
 }
 
 const Form = () => {
-  // const app = useStackApp();
   const [state, formAction] = useActionState<FormState | null, FormData>(
     signup,
     null

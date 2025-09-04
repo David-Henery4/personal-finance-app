@@ -8,15 +8,15 @@ import {
   boolean,
 } from "drizzle-orm/pg-core";
 
-// Reference Neon Auth's existing users table
-export const usersTable = pgTable("neon_auth.users_sync", {
+
+export const usersTable = pgTable("users", {
   id: text("id").primaryKey(),
   name: text("name"),
   email: text("email"),
+  emailVerified: boolean("email_verified").default(false),
+  password: text("password"),
   createdAt: timestamp("created_at"),
   updatedAt: timestamp("updated_at"),
-  deletedAt: timestamp("deleted_at"),
-  rawJson: text("raw_json"),
 });
 
 export const budgetsTable = pgTable("budgets", {

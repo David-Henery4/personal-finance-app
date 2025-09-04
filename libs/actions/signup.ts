@@ -40,6 +40,8 @@ const signup = async (
 
     // If validation passes, proceed with signup logic
     console.log("Validated data:", { name, email, password });
+    
+    
 
     // TODO: Add your actual signup logic here (e.g., create user in database)
     // For now, we'll simulate a successful signup
