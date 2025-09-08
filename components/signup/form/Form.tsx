@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import signup from "@/libs/actions/signup";
 import { signupSchema, type SignupFormData } from "@/libs/validation/schemas";
+import { useRouter } from "next/navigation";
 
 interface FormState {
   success?: boolean;
@@ -14,6 +15,7 @@ interface FormState {
 }
 
 const Form = () => {
+  const router = useRouter();
   const [state, formAction] = useActionState<FormState | null, FormData>(
     signup,
     null
@@ -37,6 +39,7 @@ const Form = () => {
         setError(field as keyof SignupFormData, { message });
       });
     } else if (state?.success) {
+      router.push("/");
       clearErrors();
     }
   }, [state, setError, clearErrors]);

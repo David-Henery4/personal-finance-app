@@ -1,6 +1,8 @@
 "use server";
-
+import { auth } from "@/auth";
+import {headers} from "next/headers";
 import { signupSchema } from "@/libs/validation/schemas";
+import {redirect} from "next/navigation";
 
 interface FormState {
   success?: boolean;
@@ -41,7 +43,15 @@ const signup = async (
     // If validation passes, proceed with signup logic
     console.log("Validated data:", { name, email, password });
     
-    
+    const signupResponse = await auth.api.signUpEmail({
+      body: {
+        name,
+        email,
+        password,
+      },
+    });
+    console.log("Signup response:", signupResponse);
+    // redirect("/");
 
     // TODO: Add your actual signup logic here (e.g., create user in database)
     // For now, we'll simulate a successful signup
