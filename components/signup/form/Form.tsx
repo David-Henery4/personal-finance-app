@@ -1,7 +1,6 @@
 "use client";
-import React, { startTransition } from "react";
+import { startTransition, useEffect, useActionState } from "react";
 import { Input, SubmitBtn } from "@/components/reused/form-components";
-import { useActionState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import signup from "@/libs/actions/signup";
@@ -33,7 +32,7 @@ const Form = () => {
   });
 
   // Update form errors when server state changes
-  React.useEffect(() => {
+  useEffect(() => {
     if (state?.errors) {
       Object.entries(state.errors).forEach(([field, message]) => {
         setError(field as keyof SignupFormData, { message });

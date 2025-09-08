@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/globals.css";
 import public_sans from "@/fonts/publicSans";
 

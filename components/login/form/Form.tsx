@@ -1,13 +1,12 @@
 "use client";
 import { Input, SubmitBtn } from "@/components/reused/form-components"
-import { useActionState } from "react";
+import { useActionState, startTransition, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import login from "@/libs/actions/login";
 import { loginSchema, type LoginFormData } from "@/libs/validation/schemas";
 import { useRouter } from "next/navigation";
-import React from "react";  
-import { startTransition } from "react";
+
 interface FormState {
   success?: boolean;
   errors?: Record<string, string>;
@@ -32,7 +31,7 @@ const Form = () => {
     mode: "onBlur",
   });
   
-  React.useEffect(() => {
+  useEffect(() => {
     if (state?.errors) {
       Object.entries(state.errors).forEach(([field, message]) => {
         setError(field as keyof LoginFormData, { message });
