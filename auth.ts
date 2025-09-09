@@ -10,5 +10,11 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
+  session: {
+    cookieCache: {
+      enabled: true,
+      maxAge: 5 * 60, // 5 minutes
+    },
+  },
   plugins: [nextCookies()], // make sure this is the last plugin in the array
 });

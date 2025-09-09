@@ -1,20 +1,32 @@
-"use client";
-import { authClient } from "@/libs/auth/auth-client";
-import { useRouter } from "next/navigation";
+import { auth } from "@/auth";
+import { SignoutBtn } from "@/components/reused/btns";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 
-export default function Page() {
+export default async function Page() {
 
-  const router = useRouter();
+  const session = await auth.api.getSession({
+    query: {
+      disableCookieCache: true,
+    },
+    headers: await headers(),
+  });
 
-  const handleLogout = async () => {
-    await authClient.signOut();
-    router.push("/login");
-  };
+  const isValidSession = (session?: {
+    expiresAt: Date;
+    userId: string;
+    token?: string | null;
+  }) =>
+    !!session && !!session.userId && new Date(session.expiresAt) > new Date();
+
+  if (!isValidSession(session?.session)) {
+    redirect("/login");
+  }
 
   return (
     <main className="text-amber-500">
       Hello, Next.js!
-      <button className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 hover:cursor-pointer" onClick={handleLogout}>Logout</button>
+      <SignoutBtn />
     </main>
   );
 }
