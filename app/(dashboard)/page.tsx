@@ -24,9 +24,11 @@ export default async function Page() {
   }
 
   return (
-    <main className="text-amber-500">
-      Hello, Next.js!
-      <SignoutBtn />
+    <main className="text-amber-500 min-h-svh">
+      
+      
+      
+      {/* <SignoutBtn /> */}
     </main>
   );
 }

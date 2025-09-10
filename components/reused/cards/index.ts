@@ -1,7 +1,7 @@
-import DisplayCard from "./DisplayCard";
+import TotalsDisplayCard from "./TotalsDisplayCard";
 import ListItem from "./ListItem";
 
 export {
-  DisplayCard,
+  TotalsDisplayCard,
   ListItem
 }
