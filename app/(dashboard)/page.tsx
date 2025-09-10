@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import { SignoutBtn } from "@/components/reused/btns";
+import Sidebar from "@/components/global/dashboard/Sidebar";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -26,8 +27,12 @@ export default async function Page() {
   return (
     <main className="text-amber-500 min-h-svh">
       
-      
-      
+      <section className="w-full">
+        
+      </section>
+
+      <Sidebar/>
+
       {/* <SignoutBtn /> */}
     </main>
   );
