@@ -1,5 +1,4 @@
 
-
 const appRoutes = {
   dashboard: "/",
   login: "/login",

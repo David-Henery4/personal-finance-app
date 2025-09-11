@@ -15,34 +15,74 @@ const Sidebar = () => {
   return (
     <menu className="w-full px-4 pt-2 fixed left-0 bottom-0 bg-grey-900 flex justify-between items-center">
       <Link
-        className={`w-full grid place-items-center pt-2 pb-3 rounded-t-lg group hover:cursor-pointer ${pathname === appRoutes.dashboard ? "bg-grey-100" : ""}`}
+        className={`w-full grid place-items-center pt-2 pb-3 rounded-t-lg group hover:cursor-pointer ${
+          pathname === appRoutes.dashboard ? "bg-grey-100" : ""
+        }`}
         href={appRoutes.dashboard}
       >
-        <HomeIcon className={`${pathname === appRoutes.dashboard ? "fill-green" : "fill-grey-300 group-hover:fill-white"}`} />
+        <HomeIcon
+          className={`${
+            pathname === appRoutes.dashboard
+              ? "fill-green"
+              : "fill-grey-300 group-hover:fill-white"
+          }`}
+        />
       </Link>
       <Link
-        className="w-full grid place-items-center pt-2 pb-3 group hover:cursor-pointer"
+        className={`w-full grid place-items-center pt-2 pb-3 rounded-t-lg group hover:cursor-pointer ${
+          pathname === appRoutes.transactions ? "bg-grey-100" : ""
+        }`}
         href={appRoutes.transactions}
       >
-        <TransactionsIcon className={`${pathname === appRoutes.transactions ? "fill-green" : "fill-grey-300 group-hover:fill-white"}`} />
+        <TransactionsIcon
+          className={`${
+            pathname === appRoutes.transactions
+              ? "fill-green"
+              : "fill-grey-300 group-hover:fill-white"
+          }`}
+        />
       </Link>
       <Link
-        className="w-full grid place-items-center pt-2 pb-3 group hover:cursor-pointer"
+        className={`w-full grid place-items-center pt-2 pb-3 rounded-t-lg group hover:cursor-pointer ${
+          pathname === appRoutes.budgets ? "bg-grey-100" : ""
+        }`}
         href={appRoutes.budgets}
       >
-        <BudgetIcon className={`${pathname === appRoutes.budgets ? "fill-green" : "fill-grey-300 group-hover:fill-white hover:cursor-pointer"}`} />
+        <BudgetIcon
+          className={`${
+            pathname === appRoutes.budgets
+              ? "fill-green"
+              : "fill-grey-300 group-hover:fill-white hover:cursor-pointer"
+          }`}
+        />
       </Link>
       <Link
-        className="w-full grid place-items-center pt-2 pb-3 group hover:cursor-pointer"
+        className={`w-full grid place-items-center pt-2 pb-3 rounded-t-lg group hover:cursor-pointer ${
+          pathname === appRoutes.pots ? "bg-grey-100" : ""
+        }`}
         href={appRoutes.pots}
       >
-        <PotsIcon className={`${pathname === appRoutes.pots ? "fill-green" : "fill-grey-300 group-hover:fill-white hover:cursor-pointer"}`} />
+        <PotsIcon
+          className={`${
+            pathname === appRoutes.pots
+              ? "fill-green"
+              : "fill-grey-300 group-hover:fill-white hover:cursor-pointer"
+          }`}
+        />
       </Link>
       <Link
-        className="w-full grid place-items-center pt-2 pb-3 group hover:cursor-pointer"
+        className={`w-full grid place-items-center pt-2 pb-3 rounded-t-lg group hover:cursor-pointer ${
+          pathname === appRoutes.bills ? "bg-grey-100" : ""
+        }`}
         href={appRoutes.bills}
       >
-        <BillsIcon className={`${pathname === appRoutes.bills ? "fill-green" : "fill-grey-300 group-hover:fill-white hover:cursor-pointer"}`} />
+        <BillsIcon
+          className={`${
+            pathname === appRoutes.bills
+              ? "fill-green"
+              : "fill-grey-300 group-hover:fill-white hover:cursor-pointer"
+          }`}
+        />
       </Link>
     </menu>
   );
