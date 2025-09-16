@@ -1,5 +1,9 @@
 import PotsSummaryContainer from "./PotsSummaryContainer";
+import OverallsTotalsContainer from "./OverallsTotalsContainer";
+import PagesCardsContainer from "./PagesCardsContainer";
 
 export {
-  PotsSummaryContainer
+  PotsSummaryContainer,
+  OverallsTotalsContainer,
+  PagesCardsContainer
 }

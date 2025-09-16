@@ -46,4 +46,7 @@
   --grid-template-rows-login: min-content 1fr;
   --grid-template-columns-login: 16px repeat(10, 1fr) 16px;
   --grid-template-columns-login-desktop: 20px repeat(10, 1fr) 20px;
+  --grid-template-columns-dashboard-mobile: 16px repeat(10, 1fr) 16px;
+
+
 }

@@ -13,6 +13,7 @@ const ParaText = ({size, bold, className, ...props}: ParaTextTypes) => {
 const paraTextVariants = cva("text-grey-900 leading-[150%] tracking-[0px]", {
   variants: {
     size: {
+      xl: "text-[32px] leading-[120%]",
       base: "text-base",
       sm: "text-sm",
       xs: "text-xs",

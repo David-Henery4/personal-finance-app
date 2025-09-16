@@ -7,7 +7,7 @@ import { DashboardIcon, Budgets, BillsIcon, PotsIcon, Transaction } from "@/comp
 const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <menu className="w-full px-4 pt-2 fixed left-0 bottom-0 bg-grey-900 flex justify-between items-center">
+    <menu className="w-full px-4 pt-2 rounded-t-lg fixed left-0 bottom-0 bg-grey-900 flex justify-between items-center">
       <SidebarLink
         pathname={pathname}
         href={appRoutes.dashboard}
@@ -18,16 +18,16 @@ const Sidebar = () => {
 
       <SidebarLink
         pathname={pathname}
+        href={appRoutes.transactions}
+      >
+        <Transaction pathname={pathname} />
+      </SidebarLink>
+      
+      <SidebarLink
+        pathname={pathname}
         href={appRoutes.budgets}
       >
         <Budgets pathname={pathname} />
-      </SidebarLink>
-
-      <SidebarLink
-        pathname={pathname}
-        href={appRoutes.bills}
-      >
-        <BillsIcon pathname={pathname} />
       </SidebarLink>
 
       <SidebarLink
@@ -39,9 +39,9 @@ const Sidebar = () => {
 
       <SidebarLink
         pathname={pathname}
-        href={appRoutes.transactions}
+        href={appRoutes.bills}
       >
-        <Transaction pathname={pathname} />
+        <BillsIcon pathname={pathname} />
       </SidebarLink>
 
     </menu>

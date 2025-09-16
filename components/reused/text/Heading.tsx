@@ -2,11 +2,27 @@ import { cva } from "class-variance-authority";
 import { cn } from "@/libs/utils/cn";
 import HeadingTypes from "@/types/HeadingTypes";
 
-const Heading = ({ headingType = "primary", className, ...props }: HeadingTypes) => {
+const Heading = ({ headingType = "primary", theme, className, ...props }: HeadingTypes) => {
   if (headingType === "secondary") {
     return (
       <h2
-        className={cn(headingVariants({ headingType }), className)}
+        className={cn(headingVariants({ headingType, theme }), className)}
+        {...props}
+      />
+    );
+  }
+  if (headingType === "third") {
+    return (
+      <h3
+        className={cn(headingVariants({ headingType, theme }), className)}
+        {...props}
+      />
+    );
+  }
+  if (headingType === "fourth") {
+    return (
+      <h4
+        className={cn(headingVariants({ headingType, theme }), className)}
         {...props}
       />
     );
@@ -22,7 +38,13 @@ const headingVariants = cva(
       headingType: {
         primary: "text-[32px]",
         secondary: "text-xl",
+        third: "text-sm",
+        fourth: "text-xl",
       },
+      theme: {
+        light: "text-grey-500",
+        dark: "text-white"
+      }
     },
   }
 );

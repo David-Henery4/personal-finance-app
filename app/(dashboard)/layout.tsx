@@ -30,7 +30,7 @@ export default async function DashboardLayout({
 
 
   return (
-    <main className="text-amber-500 min-h-svh">
+    <main className="min-h-svh">
       
       {children}
 
