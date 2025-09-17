@@ -27,6 +27,14 @@ const Heading = ({ headingType = "primary", theme, className, ...props }: Headin
       />
     );
   }
+  if (headingType === "five") {
+    return (
+      <h5
+        className={cn(headingVariants({ headingType, theme }), className)}
+        {...props}
+      />
+    );
+  }
 
   return <h1 className={cn(headingVariants({headingType}),  className)} {...props} />;
 }
@@ -40,6 +48,7 @@ const headingVariants = cva(
         secondary: "text-xl",
         third: "text-sm",
         fourth: "text-xl",
+        five: "text-xs",
       },
       theme: {
         light: "text-grey-500",

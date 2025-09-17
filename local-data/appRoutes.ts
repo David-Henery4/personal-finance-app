@@ -1,5 +1,6 @@
+import { RouteTypes } from "@/types/RouteTypes";
 
-const appRoutes = {
+const appRoutes: RouteTypes = {
   dashboard: "/",
   login: "/login",
   signup: "/signup",
