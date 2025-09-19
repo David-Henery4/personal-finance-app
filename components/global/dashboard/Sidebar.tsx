@@ -7,7 +7,7 @@ import { DashboardIcon, Budgets, BillsIcon, PotsIcon, Transaction } from "@/comp
 const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <menu className="w-full px-4 pt-2 rounded-t-lg fixed left-0 bottom-0 bg-grey-900 flex justify-between items-center">
+    <menu className="w-full px-4 pt-2 rounded-t-lg sticky left-0 bottom-0 bg-grey-900 flex justify-between items-center">
       <SidebarLink
         pathname={pathname}
         href={appRoutes.dashboard}
