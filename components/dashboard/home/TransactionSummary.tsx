@@ -1,6 +1,7 @@
 import Heading from "@/components/reused/text/Heading";
 import ParaText from "@/components/reused/text/ParaText";
 import { CardLink } from "@/components/reused/cards";
+import { JSX } from "react";
 
 const placeholderTransItems = [
   {
@@ -46,7 +47,7 @@ const placeholderTransItems = [
 ];
 
 const TransactionSummary = () => {
-
+  
   /**
    * Formats and returns a styled ParaText component representing a transaction amount,
    * based on whether the transaction is an "income" or "expense".
@@ -54,12 +55,11 @@ const TransactionSummary = () => {
    * - For "income", the amount is prefixed with "+" and styled in green.
    * - For "expense", the amount is prefixed with "-" and styled in black.
    * - For any other type, returns a red "Invalid Transaction" message.
-   *
-   * @param {string} type - The transaction type, expected to be either "income" or "expense".
-   * @param {number} amount - The transaction amount to display.
-   * @returns {JSX.Element} A ParaText component with the formatted amount or an error message.
    */
-  const handleIncomeExpenseFormat = (type: string, amount: number) => {
+  const handleIncomeExpenseFormat = (
+    type: string,
+    amount: number
+  ): JSX.Element => {
     if (type === "income") {
       return (
         <ParaText bold="Y" size="sm" className="text-green">
@@ -80,11 +80,10 @@ const TransactionSummary = () => {
         </ParaText>
       );
     }
-  }
+  };
 
   return (
     <div className="rounded-xl px-5 py-6 bg-white">
-
       <div className="flex justify-between items-center">
         <Heading headingType="fourth">Transactions</Heading>
         <CardLink href="/transactions">View All</CardLink>
@@ -110,14 +109,15 @@ const TransactionSummary = () => {
               </div>
 
               <div className="text-right">
-                
-                  {handleIncomeExpenseFormat(transaction.type, transaction.amount)}
-                
+                {handleIncomeExpenseFormat(
+                  transaction.type,
+                  transaction.amount
+                )}
+
                 <ParaText bold="N" size="xs" className="mt-2">
                   {transaction.date}
                 </ParaText>
               </div>
-
             </div>
           );
         })}
