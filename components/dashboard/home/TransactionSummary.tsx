@@ -46,6 +46,13 @@ const placeholderTransItems = [
   },
 ];
 
+// Could set the default image/icon/initial/colour etc based on the category of the transaction
+// EG - if no image available/uploaded, then use a default option.
+//
+// -->  <p className="capitalize font-bold text-xs">
+// -->   {transaction.counterparty.slice(0, 1)}
+// -->  </p>
+
 const TransactionSummary = () => {
   
   /**
@@ -97,7 +104,7 @@ const TransactionSummary = () => {
               className="flex justify-between items-center py-5 border-b border-b-grey-100 first:pt-0 last:pb-0 last:border-b-0"
             >
               <div className="flex-1 flex justify-start items-center gap-4">
-                <div className="p-1 rounded-full bg-purple-500">
+                <div className="h-8 w-8 grid place-items-center rounded-full bg-purple-500">
                   <p className="capitalize font-bold text-xs">
                     {transaction.counterparty.slice(0, 1)}
                   </p>
