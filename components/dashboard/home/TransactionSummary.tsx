@@ -1,7 +1,6 @@
-import Heading from "@/components/reused/text/Heading";
 import ParaText from "@/components/reused/text/ParaText";
-import { CardLink } from "@/components/reused/cards";
 import { JSX } from "react";
+import { HomeCardHeader } from "@/components/reused/cards";
 
 const placeholderTransItems = [
   {
@@ -91,10 +90,8 @@ const TransactionSummary = () => {
 
   return (
     <div className="rounded-xl px-5 py-6 bg-white">
-      <div className="flex justify-between items-center">
-        <Heading headingType="fourth">Transactions</Heading>
-        <CardLink href="/transactions">View All</CardLink>
-      </div>
+
+      <HomeCardHeader title="transactions" href="/transactions" linkText="view all" />
 
       <div className="mt-8 grid grid-cols-1">
         {placeholderTransItems.map((transaction) => {

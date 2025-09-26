@@ -1,7 +1,7 @@
 import Heading from "@/components/reused/text/Heading";
 import ParaText from "@/components/reused/text/ParaText";
-import { CardLink } from "@/components/reused/cards";
 import PotIcon from "public/assets/images/icon-pot.svg"
+import { HomeCardHeader } from "@/components/reused/cards";
 
 const placeholderPotItems = [
   {
@@ -36,13 +36,9 @@ const PotsSummaryContainer = () => {
   return (
     <div className="rounded-xl px-5 py-6 bg-white">
 
-      <div className="flex justify-between items-center">
-        <Heading headingType="fourth">Pots</Heading>
-        <CardLink href="/pots">See details</CardLink>
-      </div>
+      <HomeCardHeader href="/pots" title="pots" linkText="see details" />
 
       <div className="mt-5 flex flex-col justify-center items-center gap-5">
-
         {/* Pots totals */}
         <div className="w-full bg-beige-100 p-4 rounded-xl flex justify-start items-center gap-4">
           <PotIcon />
@@ -61,7 +57,10 @@ const PotsSummaryContainer = () => {
           {placeholderPotItems.map((pot) => {
             return (
               <div key={pot.id} className="relative pl-5">
-                <div style={{backgroundColor: `${pot.theme}`}} className="absolute left-0 top-0 h-full w-1 rounded-lg"></div>
+                <div
+                  style={{ backgroundColor: `${pot.theme}` }}
+                  className="absolute left-0 top-0 h-full w-1 rounded-lg"
+                ></div>
                 <Heading
                   headingType="five"
                   className="text-grey-500 font-normal"
@@ -75,9 +74,7 @@ const PotsSummaryContainer = () => {
             );
           })}
         </div>
-
       </div>
-
     </div>
   );
 };
