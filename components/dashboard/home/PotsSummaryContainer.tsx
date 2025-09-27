@@ -1,7 +1,7 @@
 import Heading from "@/components/reused/text/Heading";
 import ParaText from "@/components/reused/text/ParaText";
-import PotIcon from "public/assets/images/icon-pot.svg"
-import { HomeCardHeader } from "@/components/reused/cards";
+import PotIcon from "public/assets/images/icon-pot.svg";
+import { HomeCardHeader, ListItem } from "@/components/reused/cards";
 
 const placeholderPotItems = [
   {
@@ -31,11 +31,8 @@ const placeholderPotItems = [
 ];
 
 const PotsSummaryContainer = () => {
-
-
   return (
     <div className="rounded-xl px-5 py-6 bg-white">
-
       <HomeCardHeader href="/pots" title="pots" linkText="see details" />
 
       <div className="mt-5 flex flex-col justify-center items-center gap-5">
@@ -53,27 +50,12 @@ const PotsSummaryContainer = () => {
         </div>
 
         {/* Pots List */}
-        <div className="w-full grid grid-cols-2 gap-4">
+        <ul className="w-full grid grid-cols-2 gap-4">
           {placeholderPotItems.map((pot) => {
-            return (
-              <div key={pot.id} className="relative pl-5">
-                <div
-                  style={{ backgroundColor: `${pot.theme}` }}
-                  className="absolute left-0 top-0 h-full w-1 rounded-lg"
-                ></div>
-                <Heading
-                  headingType="five"
-                  className="text-grey-500 font-normal"
-                >
-                  {pot.title}
-                </Heading>
-                <ParaText size="sm" bold="Y">
-                  {`£${pot.value}`}
-                </ParaText>
-              </div>
-            );
+            return <ListItem {...pot} key={pot.id} />;
           })}
-        </div>
+        </ul>
+
       </div>
     </div>
   );
