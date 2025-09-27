@@ -1,4 +1,3 @@
-
 import { ListItem } from "../cards";
 
 const placeholderBudgetItems = [
