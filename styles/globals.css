@@ -2,6 +2,8 @@
 
 @theme {
   /** Breakpoints **/
+  --breakpoint-lg-mobile: 35em; /* 560px; */
+  --breakpoint-tablet: 47.5em; /* 760px; */
   --breakpoint-laptop: 64em; /* 1024px */
   --breakpoint-desktop-sm: 73.75em; /* 1180px */
   --breakpoint-desktop-md: 76.5em; /* 1224px */
@@ -48,5 +50,6 @@
   --grid-template-columns-login-desktop: 20px repeat(10, 1fr) 20px;
   --grid-template-columns-dashboard-mobile: 16px repeat(10, 1fr) 16px;
 
-
+  --grid-template-columns-totals-sm-tablet: repeat(2, 1fr);
+  --grid-template-columns-totals-tablet: repeat(3, 1fr);
 }

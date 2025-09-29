@@ -11,7 +11,7 @@ interface HomeCardHeaderParams {
 
 const HomeCardHeader = ({ href, title, linkText }: HomeCardHeaderParams) => {
   return (
-    <div className="flex justify-between items-center capitalize">
+    <div className="flex justify-between items-center gap-2 capitalize">
       <Heading headingType="fourth">{title}</Heading>
       <CardLink href={href}>{linkText}</CardLink>
     </div>
