@@ -10,7 +10,7 @@ interface ListItemInfo {
 
 const ListItem = ({id, theme, title, value}: ListItemInfo) => {
   return (
-    <li key={id} className="relative pl-5">
+    <li key={id} className="relative pl-5 content-center">
       <div
         style={{ backgroundColor: `${theme}` }}
         className="absolute left-0 top-0 h-full w-1 rounded-lg"

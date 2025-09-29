@@ -35,7 +35,7 @@ const PotsSummaryContainer = () => {
     <div className="rounded-xl px-5 py-6 bg-white">
       <HomeCardHeader href="/pots" title="pots" linkText="see details" />
 
-      <div className="mt-5 flex flex-col justify-center items-center gap-5">
+      <div className="mt-5 flex flex-col justify-center items-center gap-5 lg-mobile:flex-row">
         {/* Pots totals */}
         <div className="w-full bg-beige-100 p-4 rounded-xl flex justify-start items-center gap-4">
           <PotIcon />
