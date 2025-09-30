@@ -7,43 +7,41 @@ import { DashboardIcon, Budgets, BillsIcon, PotsIcon, Transaction } from "@/comp
 const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <menu className="w-full px-4 pt-2 rounded-t-lg sticky left-0 bottom-0 bg-grey-900 flex justify-between items-center">
-      <SidebarLink
-        pathname={pathname}
-        href={appRoutes.dashboard}
-      >
+    <menu className="w-full px-4 pt-2 rounded-t-lg sticky left-0 bottom-0 bg-grey-900 flex justify-between items-center sm-tablet:px-10">
+      <SidebarLink pathname={pathname} href={appRoutes.dashboard}>
         <DashboardIcon pathname={pathname} />
-        {/* <span>Dashboard</span> */}
+        <p className="text-xs font-bold sr-only lg-mobile:not-sr-only lg-mobile:mt-1">
+          Dashboard
+        </p>
       </SidebarLink>
 
-      <SidebarLink
-        pathname={pathname}
-        href={appRoutes.transactions}
-      >
+      <SidebarLink pathname={pathname} href={appRoutes.transactions}>
         <Transaction pathname={pathname} />
+        <p className="text-xs font-bold sr-only lg-mobile:not-sr-only lg-mobile:mt-1">
+          Transactions
+        </p>
       </SidebarLink>
-      
-      <SidebarLink
-        pathname={pathname}
-        href={appRoutes.budgets}
-      >
+
+      <SidebarLink pathname={pathname} href={appRoutes.budgets}>
         <Budgets pathname={pathname} />
+        <p className="text-xs font-bold sr-only lg-mobile:not-sr-only lg-mobile:mt-1">
+          Budgets
+        </p>
       </SidebarLink>
 
-      <SidebarLink
-        pathname={pathname}
-        href={appRoutes.pots}
-      >
+      <SidebarLink pathname={pathname} href={appRoutes.pots}>
         <PotsIcon pathname={pathname} />
+        <p className="text-xs font-bold sr-only lg-mobile:not-sr-only lg-mobile:mt-1">
+          Pots
+        </p>
       </SidebarLink>
 
-      <SidebarLink
-        pathname={pathname}
-        href={appRoutes.bills}
-      >
+      <SidebarLink pathname={pathname} href={appRoutes.bills}>
         <BillsIcon pathname={pathname} />
+        <p className="text-xs font-bold sr-only lg-mobile:not-sr-only lg-mobile:mt-1">
+          Recurring bills
+        </p>
       </SidebarLink>
-
     </menu>
   );
 };

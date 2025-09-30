@@ -89,9 +89,12 @@ const TransactionSummary = () => {
   };
 
   return (
-    <div className="rounded-xl px-5 py-6 bg-white">
-
-      <HomeCardHeader title="transactions" href="/transactions" linkText="view all" />
+    <div className="rounded-xl px-5 py-6 bg-white sm-tablet:p-8">
+      <HomeCardHeader
+        title="transactions"
+        href="/transactions"
+        linkText="view all"
+      />
 
       <div className="mt-8 grid grid-cols-1">
         {placeholderTransItems.map((transaction) => {

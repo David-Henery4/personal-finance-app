@@ -30,11 +30,9 @@ const placeholderBudgetItems = [
 
 const ChartSummaryList = () => {
   return (
-    <ul className="w-full grid grid-cols-2 gap-4 mt-4">
+    <ul className="w-full grid grid-cols-2 gap-4 lg-mobile:grid-cols-1">
       {placeholderBudgetItems.map((budget) => {
-        return (
-          <ListItem {...budget} key={budget.id} />
-        );
+        return <ListItem {...budget} key={budget.id} />;
       })}
     </ul>
   );

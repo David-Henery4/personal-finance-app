@@ -25,33 +25,34 @@ const placeholderBillsList = [
 
 const BillsSummaryContainer = () => {
   return (
-    <div className="rounded-xl px-5 py-6 bg-white">
-      <HomeCardHeader href="/bills" linkText="see details" title="recurring bills" />
+    <div className="rounded-xl px-5 py-6 bg-white sm-tablet:p-8">
+      <HomeCardHeader
+        href="/bills"
+        linkText="see details"
+        title="recurring bills"
+      />
 
       <ul className="flex flex-col justify-between items-center gap-3 mt-8">
-        {
-          placeholderBillsList.map((bill) => {
-            return (
-              <li
-                key={bill.id}
-                className="w-full px-4 py-5 rounded-lg bg-beige-100 flex justify-between items-center"
-                style={{borderLeft: `4px solid ${bill.theme}`}}
+        {placeholderBillsList.map((bill) => {
+          return (
+            <li
+              key={bill.id}
+              className="w-full px-4 py-5 rounded-lg bg-beige-100 flex justify-between items-center"
+              style={{ borderLeft: `4px solid ${bill.theme}` }}
+            >
+              <Heading
+                headingType="third"
+                className="text-grey-500 capitalize font-medium"
               >
-                <Heading
-                  headingType="third"
-                  className="text-grey-500 capitalize font-medium"
-                >
-                  {bill.title}
-                </Heading>
-                <ParaText bold="Y" size="sm">
-                  {`£${bill.value.toFixed(2)}`}
-                </ParaText>
-              </li>
-            );
-          })
-        }
+                {bill.title}
+              </Heading>
+              <ParaText bold="Y" size="sm">
+                {`£${bill.value.toFixed(2)}`}
+              </ParaText>
+            </li>
+          );
+        })}
       </ul>
-
     </div>
   );
 }
