@@ -89,7 +89,7 @@ const TransactionSummary = () => {
   };
 
   return (
-    <div className="rounded-xl px-5 py-6 bg-white sm-tablet:p-8">
+    <div className="rounded-xl px-5 py-6 bg-white sm-tablet:p-8 laptop:col-start-1 laptop:col-end-7 laptop:row-start-3 laptop:row-end-13">
       <HomeCardHeader
         title="transactions"
         href="/transactions"
