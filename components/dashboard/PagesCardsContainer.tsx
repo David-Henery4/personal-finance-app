@@ -3,16 +3,14 @@ import { PotsSummaryContainer, TransactionSummary, BudgetsChartSummaryContainer,
 
 const PagesCardsContainer = () => {
   return (
-    <div className="col-start-2 col-end-12 mt-8 grid gap-4 laptop:grid-cols-12">
+    <div className="col-start-2 col-end-12 mt-8 grid gap-4 laptop:grid-cols-12 desktop-lg:gap-6">
+      <PotsSummaryContainer />
 
-      <PotsSummaryContainer/>
+      <TransactionSummary />
 
-      <TransactionSummary/>
-      
-      <BudgetsChartSummaryContainer/>
-      
-      <BillsSummaryContainer/>
-      
+      <BudgetsChartSummaryContainer />
+
+      <BillsSummaryContainer />
     </div>
   );
 };

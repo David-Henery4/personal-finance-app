@@ -30,7 +30,7 @@ export default async function DashboardLayout({
 
 
   return (
-    <main className="min-h-svh">
+    <main className="min-h-svh lg-laptop:grid lg-laptop:grid-cols-dashboard-overview">
       
       {children}
 

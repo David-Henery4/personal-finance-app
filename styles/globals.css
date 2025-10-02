@@ -6,8 +6,10 @@
   --breakpoint-sm-tablet: 38.75em; /* 620px; */
   --breakpoint-tablet: 47.5em; /* 760px; */
   --breakpoint-laptop: 64em; /* 1024px */
+  --breakpoint-lg-laptop: 68.75em; /* 1100px */
   --breakpoint-desktop-sm: 73.75em; /* 1180px */
   --breakpoint-desktop-md: 76.5em; /* 1224px */
+  --breakpoint-desktop-lg: 78em; /* 1248px */
 
   /** Fonts **/
   --font-public-sans: var(--font-public-sans);
@@ -51,6 +53,8 @@
   --grid-template-columns-login-desktop: 20px repeat(10, 1fr) 20px;
   --grid-template-columns-dashboard-mobile: 16px repeat(10, 1fr) 16px;
   --grid-template-columns-dashboard-tablet: 40px repeat(10, 1fr) 40px;
+
+  --grid-template-columns-dashboard-overview: min-content 1fr;
 
   --grid-template-columns-totals-sm-tablet: repeat(2, 1fr);
   --grid-template-columns-totals-tablet: repeat(3, 1fr);

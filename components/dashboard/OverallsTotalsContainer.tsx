@@ -5,7 +5,7 @@ const OverallsTotalsContainer = () => {
   return (
     <div className="col-start-2 col-end-12">
       <Heading headingType="primary">Overview</Heading>
-      <div className="mt-8 grid gap-3 lg-mobile:grid-cols-totals-sm-tablet tablet:grid-cols-totals-tablet">
+      <div className="mt-8 grid gap-3 lg-mobile:grid-cols-totals-sm-tablet tablet:grid-cols-totals-tablet desktop-lg:gap-6">
         <TotalsDisplayCard
           isPrimary={true}
           title="Current Balance"
