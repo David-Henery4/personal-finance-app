@@ -1,4 +1,4 @@
-import appRoutes from "@/local-data/appRoutes";
+import {appRoutes} from "@/local-data/appRoutes";
 
 const BillsIcon = ({ pathname }: { pathname: string }) => {
   return (

@@ -1,6 +1,6 @@
-import appRoutes from "@/local-data/appRoutes";
+import { appRoutes } from "@/local-data/appRoutes";
 
-const Transaction = ({ pathname }: { pathname: string }) => {
+const TransactionIcon = ({ pathname }: { pathname: string }) => {
   return (
     <svg
       height="18"
@@ -18,4 +18,4 @@ const Transaction = ({ pathname }: { pathname: string }) => {
   );
 };
 
-export default Transaction;
+export default TransactionIcon;

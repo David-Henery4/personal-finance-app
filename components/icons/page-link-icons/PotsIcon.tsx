@@ -1,4 +1,4 @@
-import appRoutes from "@/local-data/appRoutes";
+import { appRoutes } from "@/local-data/appRoutes";
 
 const PotsIcon = ({ pathname }: { pathname: string }) => {
   return (
@@ -18,4 +18,4 @@ const PotsIcon = ({ pathname }: { pathname: string }) => {
   );
 };
 
-export default PotsIcon
+export default PotsIcon;

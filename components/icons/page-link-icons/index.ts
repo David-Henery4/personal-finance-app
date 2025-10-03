@@ -1,13 +1,13 @@
 import DashboardIcon from "./DashboardIcon";
 import BillsIcon from "./BillsIcon";
-import Budgets from "./Budgets";
+import BudgetsIcon from "./BudgetsIcon";
 import PotsIcon from "./PotsIcon";
-import Transaction from "./Transaction";
+import TransactionIcon from "./TransactionIcon";
 
 export {
   DashboardIcon,
   BillsIcon,
-  Budgets,
+  BudgetsIcon,
   PotsIcon,
-  Transaction
+  TransactionIcon
 }

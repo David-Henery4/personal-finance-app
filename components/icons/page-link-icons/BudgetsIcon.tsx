@@ -1,6 +1,6 @@
-import appRoutes from "@/local-data/appRoutes";
+import { appRoutes } from "@/local-data/appRoutes";
 
-const Budgets = ({ pathname }: { pathname: string }) => {
+const BudgetsIcon = ({ pathname }: { pathname: string }) => {
   return (
     <svg
       height="20"
@@ -18,4 +18,4 @@ const Budgets = ({ pathname }: { pathname: string }) => {
   );
 };
 
-export default Budgets;
+export default BudgetsIcon;
