@@ -3,6 +3,7 @@ import { appRoutesList } from "@/local-data/appRoutes";
 import { usePathname } from "next/navigation";
 import SidebarLink from "./SidebarLink";
 import LogoLarge from "@/public/assets/images/logo-large.svg";
+import ArrowLeftIcon from "@/public/assets/images/icon-minimize-menu.svg";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -16,13 +17,20 @@ const Sidebar = () => {
           return (
             <SidebarLink key={route.id} pathname={pathname} href={route.route}>
               <route.icon pathname={pathname} />
-              <p className="text-xs font-bold sr-only lg-mobile:not-sr-only lg-mobile:mt-1">
+              <p className="text-xs font-bold sr-only lg-mobile:not-sr-only lg-mobile:mt-1 lg-laptop:text-sm">
                 {route.name}
               </p>
             </SidebarLink>
           );
         })}
       </menu>
+
+      <div className="hidden pr-6 group mt-60 lg-laptop:block">
+        <button className="w-full inline-flex justify-start items-center px-8 py-4 gap-4 text-sm font-bold text-grey-300 group-hover:cursor-pointer group-hover:text-white group-hover:scale-105">
+          <ArrowLeftIcon className="fill-grey-300 group-hover:fill-white" />
+          <span>Minimize Menu</span>
+        </button>
+      </div>
     </div>
   );
 };
