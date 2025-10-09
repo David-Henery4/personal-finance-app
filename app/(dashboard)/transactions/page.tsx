@@ -9,7 +9,7 @@ const Page = () => {
         <Heading headingType="primary">Transactions</Heading>
       </div>
 
-      <div className="bg-white rounded-xl py-6 px-5">
+      <div className="mt-8 bg-white rounded-xl py-6 px-5">
 
         {/* Filters, Search & Sort */}
         <FilterBar/>
