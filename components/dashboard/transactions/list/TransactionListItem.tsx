@@ -15,6 +15,7 @@ const TransactionListItem = ({
   category,
   isTransactionPage,
 }: TransactionItemProps) => {
+  
   /**
    * Formats and returns a styled ParaText component representing a transaction amount,
    * based on whether the transaction is an "income" or "expense".
