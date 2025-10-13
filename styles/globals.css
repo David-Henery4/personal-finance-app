@@ -4,6 +4,7 @@
   /** Breakpoints **/
   --breakpoint-lg-mobile: 35em; /* 560px; */
   --breakpoint-sm-tablet: 38.75em; /* 620px; */
+  --breakpoint-medium-tablet: 43.25em; /* 692px; */
   --breakpoint-tablet: 47.5em; /* 760px; */
   --breakpoint-laptop: 64em; /* 1024px */
   --breakpoint-lg-laptop: 71.25em; /* 1140px */
@@ -62,4 +63,11 @@
   --grid-template-columns-totals-tablet: repeat(3, 1fr);
 
   --grid-template-columns-budgets-summary-tablet: 1fr max-content;
+
+
+  --grid-template-columns-transaction-item-mobile: 32px 1fr 1fr;
+  --grid-template-columns-transaction-item-tablet: 40px 1fr repeat(3, 88px);
+  --grid-template-columns-transaction-item-desktop: 40px 1fr repeat(2, 120px) .5fr;
+
+
 }

@@ -6,8 +6,6 @@ interface TransactionItemProps extends TransactionItemTypes {
   isTransactionPage?: Boolean;
 }
 
-
-
 const TransactionListItem = ({
   id,
   counterparty,
@@ -31,20 +29,20 @@ const TransactionListItem = ({
   ): JSX.Element => {
     if (type === "income") {
       return (
-        <ParaText bold="Y" size="sm" className="text-green">
+        <ParaText bold="Y" size="sm" className={`text-green col-start-3 col-end-4 row-start-1 row-end-2 text-right ${isTransactionPage ? "medium-tablet:row-start-1 medium-tablet:row-end-2 medium-tablet:col-start-5 medium-tablet:col-end-6" : ""}`}>
           {`+£${amount.toFixed(2)}`}
         </ParaText>
       );
     }
     if (type === "expense") {
       return (
-        <ParaText bold="Y" size="sm" className="text-black">
+        <ParaText bold="Y" size="sm" className={`text-black col-start-3 col-end-4 row-start-1 row-end-2 text-right ${isTransactionPage ? "medium-tablet:row-start-1 medium-tablet:row-end-2 medium-tablet:col-start-5 medium-tablet:col-end-6" : ""}`}>
           {`-£${amount.toFixed(2)}`}
         </ParaText>
       );
     } else {
       return (
-        <ParaText bold="Y" size="sm" className="text-red">
+        <ParaText bold="Y" size="sm" className={`text-red col-start-3 col-end-4 row-start-1 row-end-2 text-right ${isTransactionPage ? "medium-tablet:row-start-1 medium-tablet:row-end-2 medium-tablet:col-start-5 medium-tablet:col-end-6" : ""}`}>
           Invalid Transaction
         </ParaText>
       );
@@ -64,34 +62,63 @@ const TransactionListItem = ({
   return (
     <div
       key={id}
-      className="flex justify-between items-center py-5 border-b border-b-grey-100 first:pt-0 last:pb-0 last:border-b-0"
+      className={`grid grid-cols-transaction-item-mobile gap-x-4 gap-y-1 py-5 border-b border-b-grey-100 first:pt-0 last:pb-0 last:border-b-0 ${
+        isTransactionPage
+          ? "medium-tablet:grid-cols-transaction-item-tablet medium-tablet:gap-x-8 medium-tablet:items-center laptop:grid-cols-transaction-item-desktop"
+          : ""
+      }`}
     >
-      <div className="flex-1 flex justify-start items-center gap-4">
-        <div className="h-8 w-8 grid place-items-center rounded-full bg-purple-500">
-          <p className="capitalize font-bold text-xs">
-            {counterparty.slice(0, 1)}
-          </p>
-        </div>
-
-        <div>
-          <ParaText size="sm" bold="Y" className="text-grey-900">
-            {counterparty}
-          </ParaText>
-          {isTransactionPage && (
-            <ParaText bold="N" size="xs" className="mt-2 text-grey-500">
-              {category}
-            </ParaText>
-          )}
-        </div>
+      <div
+        className={`h-8 w-8 grid place-items-center col-start-1 col-end-2 row-start-1 row-end-3 self-center rounded-full bg-purple-500 ${
+          isTransactionPage
+            ? "medium-tablet:row-auto medium-tablet:w-10 medium-tablet:h-10"
+            : ""
+        }`}
+      >
+        {/* Will be image or default icon */}
+        <p className="capitalize font-bold text-xs">
+          {counterparty.slice(0, 1)}
+        </p>
       </div>
 
-      <div className="text-right">
-        {handleIncomeExpenseFormat(type, amount)}
-
-        <ParaText bold="N" size="xs" className="mt-2 text-grey-500">
-          {formatDate(date)}
+      <ParaText
+        size="sm"
+        bold="Y"
+        className={`col-start-2 col-end-3 ${
+          isTransactionPage
+            ? "medium-tablet:-ml-4"
+            : "row-start-1 row-end-3 self-center"
+        }`}
+      >
+        {counterparty}
+      </ParaText>
+      {isTransactionPage && (
+        <ParaText
+          bold="N"
+          size="xs"
+          className={`col-start-2 col-end-3 text-grey-500 ${
+            isTransactionPage
+              ? "medium-tablet:col-start-3 medium-tablet:col-end-4"
+              : ""
+          }`}
+        >
+          {category}
         </ParaText>
-      </div>
+      )}
+
+      {handleIncomeExpenseFormat(type, amount)}
+
+      <ParaText
+        bold="N"
+        size="xs"
+        className={`col-start-3 col-end-4 text-right text-grey-500 ${
+          isTransactionPage
+            ? "medium-tablet:col-start-4 medium-tablet:col-end-5 medium-tablet:text-left"
+            : ""
+        }`}
+      >
+        {formatDate(date)}
+      </ParaText>
     </div>
   );
 };
