@@ -7,8 +7,8 @@ const TransactionList = () => {
   return (
     <div className="medium-tablet:mt-6">
       {/* List container labels */}
-      <div className="hidden py-3 grid-cols-transaction-labels-tablet gap-x-8 items-center medium-tablet:grid laptop:grid-cols-transaction-item-desktop">
-        <Heading headingType="five" className="text-grey-500 font-normal">
+      <div className="hidden py-3 grid-cols-transaction-labels-tablet gap-x-8 items-center medium-tablet:grid laptop:grid-cols-transaction-labels-desktop">
+        <Heading headingType="five" className="text-grey-500 font-normal laptop:col-start-1 laptop:col-end-3">
           Recipient / Sender
         </Heading>
         <Heading headingType="five" className="text-grey-500 font-normal">
