@@ -71,5 +71,8 @@
   --grid-template-columns-transaction-item-desktop: 40px 1fr repeat(2, 120px) .5fr;
   --grid-template-columns-transaction-labels-desktop: 40px 1fr repeat(2, 120px) .5fr;
 
+}
 
+.dropdown-shadow{
+  filter: drop-shadow(0 4 24 rgba(0,0,0,.25));
 }
