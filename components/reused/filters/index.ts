@@ -1,9 +1,7 @@
 import TextSearch from "./TextSearch";
-import SortDropdown from "./SortDropdown";
-import CategoryFilter from "./CategoryFilter";
+import Dropdown from "./Dropdown";
 
 export {
-  CategoryFilter,
-  SortDropdown,
+  Dropdown,
   TextSearch,
 }
