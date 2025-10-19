@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 
 interface TransactionItemTypes {
   id: number;
@@ -11,4 +13,12 @@ interface TransactionItemTypes {
   type: string;
 }
 
-export default TransactionItemTypes
+export interface TransactionChangePageType {
+  setCurrentPage: Dispatch<SetStateAction<number>>;
+  currentPageNumbers: {
+    id: number;
+    pageNumber: number;
+  }[];
+}
+
+export default TransactionItemTypes;
