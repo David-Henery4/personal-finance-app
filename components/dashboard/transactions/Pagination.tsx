@@ -24,14 +24,13 @@ interface TempPageTypes {
 
 const Pagination = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [currentPageNumbers, setCurrentPageNumbers] = useState<
-    TempPageTypes[] | []
-  >([]);
-  const [currentItemsPerPage, setCurrentItemsPerPage] = useState(10);
   const [allTransactions, setAllTransactions] = useState(transactionsDummyData);
-  const [currentPageItems, setCurrentPageItems] = useState(
-    transactionsDummyData.slice(0, 1)
-  );
+  // const [currentItemsPerPage, setCurrentItemsPerPage] = useState(10);
+  // const [currentPageItems, setCurrentPageItems] = useState(
+    //   transactionsDummyData.slice(0, 1)
+    // );
+    
+
 
   // If we was doing it client side, & fetching all the items,
   // we would need to separate the full list into groups of 10.
@@ -42,7 +41,7 @@ const Pagination = () => {
   // then use the LENGTH of all the items in the database to create the page
   // numbers.
   const handlePageAmounts = () => {
-    const amountOfTransactions = allTransactions.length + 1;
+    const amountOfTransactions = transactionsDummyData.length + 1;
     const pages = [];
     let page = 0;
     for (let index = 1; index < amountOfTransactions; index++) {
@@ -54,12 +53,14 @@ const Pagination = () => {
         });
       }
     }
-    setCurrentPageNumbers(pages);
+    return pages
+    // setCurrentPageNumbers(pages);
   };
+  const [currentPageNumbers, setCurrentPageNumbers] = useState(handlePageAmounts());
 
-  useEffect(() => {
-    handlePageAmounts();
-  }, []);
+  // useEffect(() => {
+  //   handlePageAmounts();
+  // }, []);
 
   return (
     <nav
@@ -74,6 +75,7 @@ const Pagination = () => {
         <SmallMobilePageNumbers
           setCurrentPage={setCurrentPage}
           currentPageNumbers={currentPageNumbers}
+          currentPage={currentPage}
         />
         <NextBtn
           setCurrentPage={setCurrentPage}
