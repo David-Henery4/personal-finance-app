@@ -20,7 +20,6 @@ const SmallMobilePageNumbers = ({
   currentPage,
 }: SmallMobilePageNumbersProps) => {
   const smMobilePageNumberFormat = (): formattedFunctionReturn => {
-    console.log("Pages: ", currentPageNumbers);
 
     if (currentPageNumbers.length <= 3) {
       return currentPageNumbers;
@@ -40,7 +39,6 @@ const SmallMobilePageNumbers = ({
 
     return formattedPages;
   };
-
   const [formattedPageList, setFormattedPageList] =
     useState<formattedFunctionReturn>(smMobilePageNumberFormat());
 
@@ -64,45 +62,6 @@ const SmallMobilePageNumbers = ({
     });
   }, [currentPage]);
 
-  // console.log("Pages: ", currentPageNumbers);
-
-  // const [currentPagesTotal, setCurrentPagesTotal] = useState(
-  //   currentPageNumbers.length
-  // );
-  // const [currentPagesShown, setCurrentPagesShown] = useState([
-  //   {
-  //     id: 10,
-  //     pageNumber: 1,
-  //   },
-  // ]);
-  // //
-  // const handleMobilePagesShown = () => {
-  //   if (currentPagesTotal <= 3) {
-  //     setCurrentPagesShown(currentPageNumbers);
-  //     return;
-  //   }
-  //   const newPagesShown = new Set()
-  //   currentPageNumbers.forEach((page) => {
-  //     if (page.pageNumber === 1){
-  //       newPagesShown.add(page)
-  //     }
-  //     newPagesShown.add({
-  //       id: -1092482091,
-  //       pageNumber: null,
-  //     });
-  //     if (page.pageNumber === currentPagesTotal){
-  //       newPagesShown.add(page);
-  //     }
-  //   })
-  //   const newUpdatedPage = new Array(...newPagesShown);
-  //   setCurrentPagesShown(newUpdatedPage)
-  // };
-  // //
-  // useEffect(() => {
-  //   setCurrentPagesTotal(currentPageNumbers.length)
-  //   handleMobilePagesShown()
-  // }, [currentPageNumbers, currentPagesTotal])
-  //
   return (
     <li className="flex justify-center items-center gap-3">
       {/* Mobile Numbers */}
@@ -110,9 +69,15 @@ const SmallMobilePageNumbers = ({
         return (
           <button
             key={id}
-            className="w-[34px] h-[34px] grid place-items-center rounded-lg border border-beige-500 hover:cursor-pointer"
+            className="w-[34px] h-[34px] grid place-items-center rounded-lg border border-beige-500 hover:cursor-pointer disabled:hover:cursor-auto"
             disabled={pageNumber === "..."}
-            onClick={() => setCurrentPage(pageNumber)}
+            onClick={() => {
+              if (pageNumber === "..."){
+                setCurrentPage(1)
+              } else {
+                setCurrentPage(pageNumber);
+              }
+            }}
           >
             {pageNumber}
           </button>
