@@ -341,6 +341,8 @@ const transactionsDummyData = [
     counterparty: "Uniqlo",
     type: "expense",
   },
+  // WAS HERE, MOBILE PAGINATION BREAKS IF CERTAIN AMOUNT OF ITEMS,
+  // Breaks on all views
   {
     id: 32,
     userId: "user-123",

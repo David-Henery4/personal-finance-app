@@ -27,10 +27,8 @@ const Pagination = () => {
   const [allTransactions, setAllTransactions] = useState(transactionsDummyData);
   // const [currentItemsPerPage, setCurrentItemsPerPage] = useState(10);
   // const [currentPageItems, setCurrentPageItems] = useState(
-    //   transactionsDummyData.slice(0, 1)
-    // );
-    
-
+  //   transactionsDummyData.slice(0, 1)
+  // );
 
   // If we was doing it client side, & fetching all the items,
   // we would need to separate the full list into groups of 10.
@@ -53,10 +51,14 @@ const Pagination = () => {
         });
       }
     }
-    return pages
+    return pages;
     // setCurrentPageNumbers(pages);
   };
-  const [currentPageNumbers, setCurrentPageNumbers] = useState(handlePageAmounts());
+  const [currentPageNumbers, setCurrentPageNumbers] = useState(
+    handlePageAmounts()
+  );
+
+  // console.log(currentPageNumbers)
 
   // useEffect(() => {
   //   handlePageAmounts();
@@ -76,6 +78,11 @@ const Pagination = () => {
           setCurrentPage={setCurrentPage}
           currentPageNumbers={currentPageNumbers}
           currentPage={currentPage}
+        />
+        <MobilePageNumbers
+          currentPageNumbers={currentPageNumbers}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
         />
         <NextBtn
           setCurrentPage={setCurrentPage}

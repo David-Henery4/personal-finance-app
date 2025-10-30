@@ -20,7 +20,6 @@ const SmallMobilePageNumbers = ({
   currentPage,
 }: SmallMobilePageNumbersProps) => {
   const smMobilePageNumberFormat = (): formattedFunctionReturn => {
-
     if (currentPageNumbers.length <= 3) {
       return currentPageNumbers;
     }
@@ -35,45 +34,51 @@ const SmallMobilePageNumbers = ({
       if (i + 1 === currentPageNumbers.length) formattedPages.push(page);
     });
 
-    console.log("FormattedPages: ", formattedPages);
-
     return formattedPages;
   };
   const [formattedPageList, setFormattedPageList] =
     useState<formattedFunctionReturn>(smMobilePageNumberFormat());
 
   useEffect(() => {
+
     setFormattedPageList((prevList) => {
       const activePage = currentPageNumbers.find(
         (page) => page.pageNumber === currentPage
       );
-
-      if (!activePage) return prevList;
-
-      const removedFirstPageItem = prevList.slice(1, currentPageNumbers.length);
-      if (activePage.pageNumber === currentPageNumbers.length) {
-        const prevPage = currentPageNumbers.find(
+      const lastPages = prevList.slice(prevList.length - 2, prevList.length);
+      
+      if (!activePage) return prevList
+      
+      if (currentPageNumbers.length === currentPage){
+        const lastActivePage = currentPageNumbers.find(
           (page) => page.pageNumber === currentPage - 1
         );
-        if (!prevPage) return prevList;
-        return [prevPage, ...removedFirstPageItem];
+        
+        if (!lastActivePage) return prevList;
+        
+        return [lastActivePage, ...lastPages];
       }
-      return [activePage, ...removedFirstPageItem];
+      
+      return [activePage, ...lastPages];
     });
   }, [currentPage]);
 
   return (
-    <li className="flex justify-center items-center gap-3">
+    <li className="flex justify-center items-center gap-3 sm-mobile:hidden">
       {/* Mobile Numbers */}
       {formattedPageList.map(({ id, pageNumber }) => {
         return (
           <button
             key={id}
-            className="w-[34px] h-[34px] grid place-items-center rounded-lg border border-beige-500 hover:cursor-pointer disabled:hover:cursor-auto"
+            className={`w-[34px] h-[34px] grid place-items-center rounded-lg border hover:cursor-pointer disabled:hover:cursor-auto ${
+              currentPage === pageNumber
+                ? "bg-black text-white"
+                : "border-beige-500"
+            }`}
             disabled={pageNumber === "..."}
             onClick={() => {
-              if (pageNumber === "..."){
-                setCurrentPage(1)
+              if (pageNumber === "...") {
+                setCurrentPage(1);
               } else {
                 setCurrentPage(pageNumber);
               }

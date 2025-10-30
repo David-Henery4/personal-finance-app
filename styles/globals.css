@@ -2,6 +2,7 @@
 
 @theme {
   /** Breakpoints **/
+  --breakpoint-sm-mobile: 23em; /* 368px; */
   --breakpoint-lg-mobile: 35em; /* 560px; */
   --breakpoint-sm-tablet: 38.75em; /* 620px; */
   --breakpoint-medium-tablet: 43.25em; /* 692px; */
