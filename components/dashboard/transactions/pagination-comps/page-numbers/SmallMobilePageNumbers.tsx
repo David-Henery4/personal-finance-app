@@ -42,6 +42,9 @@ const SmallMobilePageNumbers = ({
   useEffect(() => {
 
     setFormattedPageList((prevList) => {
+      
+      if (currentPageNumbers.length <= 3) return prevList
+      
       const activePage = currentPageNumbers.find(
         (page) => page.pageNumber === currentPage
       );
@@ -66,10 +69,10 @@ const SmallMobilePageNumbers = ({
   return (
     <li className="flex justify-center items-center gap-3 sm-mobile:hidden">
       {/* Mobile Numbers */}
-      {formattedPageList.map(({ id, pageNumber }) => {
+      {formattedPageList.map(({ id, pageNumber }, i) => {
         return (
           <button
-            key={id}
+            key={i}
             className={`w-[34px] h-[34px] grid place-items-center rounded-lg border hover:cursor-pointer disabled:hover:cursor-auto ${
               currentPage === pageNumber
                 ? "bg-black text-white"

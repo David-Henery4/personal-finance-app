@@ -39,6 +39,32 @@ const MobilePageNumbers = ({
   );
 
   useEffect(() => {
+
+    setCurrentPaginationFormat((prevList) => {
+
+      // const activePages = currentPageNumbers.slice(
+      //   currentPage - 2,
+      //   currentPage
+      // );
+      // console.log("Mobile-activePages", activePages);
+
+      // if (currentPageNumbers.length === currentPage)
+
+      // const activePages = currentPageNumbers.filter(
+      //   (page) => {
+      //     if (page.pageNumber !== "...")
+      //     console.log((page.pageNumber % 2) === 0)
+      //   }
+      // );
+
+      // const lastPages = prevList.slice(prevList.length - 2, prevList.length);
+
+      // console.log("Mobile-LastPages", lastPages);
+
+      return prevList;
+    })
+
+
     // setCurrentPaginationFormat((prevValues) => {
     //   let firstTwoPages = currentPageNumbers.slice(0, 2);
     //   const lastPages = prevValues.slice(
