@@ -22,7 +22,7 @@ const MobilePageNumbers = ({
     //   firstTwoPages = currentPageNumbers.slice(currentPage - 2, currentPage + 1);
     // }
 
-    if (currentPageNumbers.length < 5) {
+    if (currentPageNumbers.length <= 4) {
       return currentPageNumbers;
     }
 
@@ -42,13 +42,11 @@ const MobilePageNumbers = ({
 
     setCurrentPaginationFormat((prevList) => {
 
-      // const activePages = currentPageNumbers.slice(
-      //   currentPage - 2,
-      //   currentPage
-      // );
-      // console.log("Mobile-activePages", activePages);
+      if (currentPageNumbers.length <= 4) return prevList
 
-      // if (currentPageNumbers.length === currentPage)
+      const activePages = currentPageNumbers.slice(currentPage - 2, currentPage)
+      console.log("Mobile-activePages", activePages);
+      
 
       // const activePages = currentPageNumbers.filter(
       //   (page) => {
@@ -56,12 +54,13 @@ const MobilePageNumbers = ({
       //     console.log((page.pageNumber % 2) === 0)
       //   }
       // );
+      
+      const lastPages = prevList.slice(prevList.length - 2, prevList.length);
 
-      // const lastPages = prevList.slice(prevList.length - 2, prevList.length);
+      console.log("Mobile-LastPages", lastPages)
 
-      // console.log("Mobile-LastPages", lastPages);
 
-      return prevList;
+      return prevList
     })
 
 

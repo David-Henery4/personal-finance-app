@@ -39,26 +39,20 @@ const Pagination = () => {
   // then use the LENGTH of all the items in the database to create the page
   // numbers.
   const handlePageAmounts = () => {
-    const amountOfTransactions = transactionsDummyData.length + 1;
+    const amountOfTransactions = transactionsDummyData.length;
+    const totalPages = Math.ceil(amountOfTransactions / 10);
     const pages = [];
-    let page = 0;
-    for (let index = 1; index < amountOfTransactions; index++) {
-      if (index % 10 === 0) {
-        page += 1;
-        pages.push({
-          id: index,
-          pageNumber: page,
-        });
-      }
+    for (let page = 1; page <= totalPages; page++) {
+      pages.push({
+        id: page,
+        pageNumber: page,
+      });
     }
     return pages;
-    // setCurrentPageNumbers(pages);
   };
   const [currentPageNumbers, setCurrentPageNumbers] = useState(
     handlePageAmounts()
   );
-
-  // console.log(currentPageNumbers)
 
   // useEffect(() => {
   //   handlePageAmounts();
