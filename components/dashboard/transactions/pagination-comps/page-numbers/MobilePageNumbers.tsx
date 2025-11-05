@@ -40,29 +40,25 @@ const MobilePageNumbers = ({
 
   useEffect(() => {
 
+    // Might move on from this and come back to it later!
+
     setCurrentPaginationFormat((prevList) => {
+      if (currentPageNumbers.length <= 4) return prevList;
 
-      if (currentPageNumbers.length <= 4) return prevList
+      const activePages = currentPageNumbers.slice(
+        currentPage - 2,
+        currentPage
+      );
 
-      const activePages = currentPageNumbers.slice(currentPage - 2, currentPage)
-      console.log("Mobile-activePages", activePages);
-      
+      // if ( activePages[1]?.pageNumber !== "..." && activePages[1]?.pageNumber % 2 !== 0) return prevList
 
-      // const activePages = currentPageNumbers.filter(
-      //   (page) => {
-      //     if (page.pageNumber !== "...")
-      //     console.log((page.pageNumber % 2) === 0)
-      //   }
-      // );
-      
       const lastPages = prevList.slice(prevList.length - 2, prevList.length);
 
-      console.log("Mobile-LastPages", lastPages)
+      console.log([...activePages, ...lastPages]);
 
-
-      return prevList
-    })
-
+      // return [...activePages, ...lastPages];
+      return prevList;
+    });
 
     // setCurrentPaginationFormat((prevValues) => {
     //   let firstTwoPages = currentPageNumbers.slice(0, 2);

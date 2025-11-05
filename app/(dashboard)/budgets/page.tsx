@@ -1,9 +1,17 @@
-
+import Heading from "@/components/reused/text/Heading";
 
 const Page = () => {
   return (
-    <section className="w-full">Budgets Page</section> 
-  )
-}
+    <div className="col-start-2 col-end-12">
 
-export default Page
+      <div>
+        <Heading headingType="primary">Budgets</Heading>
+      </div>
+
+      
+
+    </div>
+  );
+};
+
+export default Page;
