@@ -8,7 +8,7 @@ const BudgetsChartSummaryContainer = () => {
   }
 
   return (
-    <div className="rounded-xl px-5 py-6 bg-white sm-tablet:p-8 laptop:col-start-7 laptop:col-end-13 laptop:row-start-1 laptop:row-end-11">
+    <div className="rounded-xl px-5 py-6 bg-white dropdown-shadow-2 sm-tablet:p-8 laptop:col-start-7 laptop:col-end-13 laptop:row-start-1 laptop:row-end-11">
       <HomeCardHeader href="/budgets" title="budgets" linkText="see details" />
 
       {/* Pie/Donut Chart Container */}

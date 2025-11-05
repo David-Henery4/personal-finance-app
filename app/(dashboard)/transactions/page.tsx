@@ -4,24 +4,20 @@ import { FilterBar, Pagination, TransactionList } from "@/components/dashboard/t
 const Page = () => {
   return (
     <div className="col-start-2 col-end-12">
-
       <div>
         <Heading headingType="primary">Transactions</Heading>
       </div>
 
-      <div className="mt-8 bg-white rounded-xl py-6 px-5">
-
+      <div className="mt-8 bg-white rounded-xl py-6 px-5 dropdown-shadow-2">
         {/* Filters, Search & Sort */}
-        <FilterBar/>
+        <FilterBar />
 
         {/* Transaction List/Table */}
-        <TransactionList/>
+        <TransactionList />
 
         {/* Pagination */}
-        <Pagination/>
-
+        <Pagination />
       </div>
-      
     </div>
   );
 };

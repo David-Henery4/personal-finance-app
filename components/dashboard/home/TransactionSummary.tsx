@@ -16,7 +16,7 @@ const TransactionSummary = () => {
   
 
   return (
-    <div className="rounded-xl px-5 py-6 bg-white sm-tablet:p-8 laptop:col-start-1 laptop:col-end-7 laptop:row-start-3 laptop:row-end-13">
+    <div className="rounded-xl px-5 py-6 bg-white dropdown-shadow-2 sm-tablet:p-8 laptop:col-start-1 laptop:col-end-7 laptop:row-start-3 laptop:row-end-13">
       <HomeCardHeader
         title="transactions"
         href="/transactions"
@@ -24,14 +24,13 @@ const TransactionSummary = () => {
       />
 
       <div className="mt-8 grid grid-cols-1">
-        {transactionsDummyData.map((transaction) => {
-          return (
-            <TransactionListItem
-              key={transaction.id}
-              {...transaction}
-            />
-          );
-        }).slice(0,5)}
+        {transactionsDummyData
+          .map((transaction) => {
+            return (
+              <TransactionListItem key={transaction.id} {...transaction} />
+            );
+          })
+          .slice(0, 5)}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import Heading from "../text/Heading"
 const TotalsDisplayCard = ({title, value, isPrimary}: {title: string, value: string, isPrimary?: boolean}) => {
   return (
     <div
-      className={`w-full p-5 rounded-xl sm-tablet:p-6 ${
+      className={`w-full p-5 rounded-xl dropdown-shadow-2 sm-tablet:p-6 ${
         isPrimary ? "bg-primary text-secondary" : "bg-secondary text-primary"
       } last:lg-mobile:col-start-1 last:lg-mobile:col-end-[-1] last:tablet:col-start-auto last:tablet:col-end-auto`}
     >

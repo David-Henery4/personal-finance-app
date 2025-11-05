@@ -25,7 +25,7 @@ const placeholderBillsList = [
 
 const BillsSummaryContainer = () => {
   return (
-    <div className="rounded-xl px-5 py-6 bg-white sm-tablet:p-8 laptop:col-start-7 laptop:col-end-13 laptop:row-start-11 laptop:row-end-13">
+    <div className="rounded-xl px-5 py-6 bg-white dropdown-shadow-2 sm-tablet:p-8 laptop:col-start-7 laptop:col-end-13 laptop:row-start-11 laptop:row-end-13">
       <HomeCardHeader
         href="/bills"
         linkText="see details"

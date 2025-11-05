@@ -32,7 +32,7 @@ const placeholderPotItems = [
 
 const PotsSummaryContainer = () => {
   return (
-    <div className="rounded-xl px-5 py-6 bg-white sm-tablet:p-8 laptop:col-start-1 laptop:col-end-7 laptop:row-start-1 laptop:row-end-3">
+    <div className="rounded-xl px-5 py-6 bg-white dropdown-shadow-2 sm-tablet:p-8 laptop:col-start-1 laptop:col-end-7 laptop:row-start-1 laptop:row-end-3">
       <HomeCardHeader href="/pots" title="pots" linkText="see details" />
 
       <div className="mt-5 flex flex-col justify-center items-center gap-5 lg-mobile:flex-row">
@@ -55,7 +55,6 @@ const PotsSummaryContainer = () => {
             return <ListItem {...pot} key={pot.id} />;
           })}
         </ul>
-
       </div>
     </div>
   );
